@@ -1,0 +1,13 @@
+---
+data:
+  build: jenkins-data
+master:
+  build: jenkins-master
+  volumes_from:
+    - data
+proxy:
+  build: jenkins-proxy
+  ports:
+    - "80:2015"
+  links:
+    - "master:jenkins"
