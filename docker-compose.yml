@@ -3,6 +3,8 @@ data:
   build: jenkins-data
 master:
   build: jenkins-master
+  ports:
+    - "50000:50000"
   volumes_from:
     - data
 proxy:
